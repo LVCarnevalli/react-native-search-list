@@ -8,7 +8,20 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 
-class HighlightableText extends Component {
+export default class HighlightableText extends Component {
+  static propTypes = {
+    matcher: PropTypes.object,
+    text: PropTypes.string.isRequired,
+    textColor: PropTypes.string,
+    hightlightTextColor: PropTypes.string
+  }
+
+  static defaultProps = {
+    textColor: '#171a23',
+    hightlightTextColor: '#dcb35f'
+  }
+
+
   render () {
     const {textColor, hightlightTextColor} = this.props
     let startIndex = 0
@@ -63,15 +76,3 @@ class HighlightableText extends Component {
     )
   }
 }
-HighlightableText.propTypes = {
-  matcher: PropTypes.object,
-  text: PropTypes.string.isRequired,
-  textColor: PropTypes.string,
-  hightlightTextColor: PropTypes.string
-}
-
-HighlightableText.defaultProps = {
-  textColor: '#171a23',
-  hightlightTextColor: '#dcb35f'
-}
-export default HighlightableText
