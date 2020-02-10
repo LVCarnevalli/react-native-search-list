@@ -1,5 +1,5 @@
 /**
- * Created by haywoodfu on 17/4/16.
+ * Created by haywoodfu on 17/4/16..
  */
 
 import {
@@ -18,43 +18,7 @@ import Theme from './Theme'
 
 const {cancelButtonWidth: buttonWidth, searchBarHorizontalPadding, searchIconWidth} = Theme.size
 
-export default class SearchBar extends Component {
-  static propTypes = {
-    placeholder: PropTypes.string,
-    onChange: PropTypes.func, // search input value changed callback,
-
-    onFocus: PropTypes.func, // search input focused callback
-    onBlur: PropTypes.func, // search input blured callback
-
-    onClickCancel: PropTypes.func, // the search cancel button clicked
-    cancelTitle: PropTypes.string, // title for the search cancel button
-    cancelTextColor: PropTypes.string, // color for the search cancel button
-
-    searchInputBackgroundColor: PropTypes.string, // default state background color for the search input
-    searchInputBackgroundColorActive: PropTypes.string, // active state background color for the search input
-    searchInputPlaceholderColor: PropTypes.string, // default placeholder color for the search input
-    searchInputTextColor: PropTypes.string, // default state text color for the search input
-    searchInputTextColorActive: PropTypes.string, // active state text color for the search input
-
-    searchBarBackgroundColor: PropTypes.string, // active state background color for the search bar
-
-    isShowHolder: PropTypes.bool // 是否显示搜索图标
-  }
-
-  static defaultProps = {
-    searchInputBackgroundColor: '#FFF',
-    searchInputBackgroundColorActive: '#171a23',
-
-    searchInputPlaceholderColor: '#979797',
-    searchInputTextColor: '#171a23',
-    searchInputTextColorActive: '#FFF',
-
-    searchBarBackgroundColor: '#171a23',
-
-    cancelTextColor: 'white',
-    cancelTitle: 'Cancel'
-  }
-
+class SearchBar extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -209,6 +173,40 @@ export default class SearchBar extends Component {
     )
   };
 }
+SearchBar.propTypes = {
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func, // search input value changed callback,
+
+  onFocus: PropTypes.func, // search input focused callback
+  onBlur: PropTypes.func, // search input blured callback
+
+  onClickCancel: PropTypes.func, // the search cancel button clicked
+  cancelTitle: PropTypes.string, // title for the search cancel button
+  cancelTextColor: PropTypes.string, // color for the search cancel button
+
+  searchInputBackgroundColor: PropTypes.string, // default state background color for the search input
+  searchInputBackgroundColorActive: PropTypes.string, // active state background color for the search input
+  searchInputPlaceholderColor: PropTypes.string, // default placeholder color for the search input
+  searchInputTextColor: PropTypes.string, // default state text color for the search input
+  searchInputTextColorActive: PropTypes.string, // active state text color for the search input
+
+  searchBarBackgroundColor: PropTypes.string, // active state background color for the search bar
+
+  isShowHolder: PropTypes.bool // 是否显示搜索图标
+}
+SearchBar.defaultProps = {
+  searchInputBackgroundColor: '#FFF',
+  searchInputBackgroundColorActive: '#171a23',
+
+  searchInputPlaceholderColor: '#979797',
+  searchInputTextColor: '#171a23',
+  searchInputTextColorActive: '#FFF',
+
+  searchBarBackgroundColor: '#171a23',
+
+  cancelTextColor: 'white',
+  cancelTitle: 'Cancel'
+}
 
 const styles = StyleSheet.create({
   searchTextInputStyle: {
@@ -244,3 +242,4 @@ const styles = StyleSheet.create({
     height: 12
   }
 })
+export default SearchBar
